@@ -19,5 +19,5 @@ public interface Background {
 	public void setShiftX(double shiftX);
 
 	public void setShiftY(double shiftY);
-	//fhdasjkgf
+	
 }
