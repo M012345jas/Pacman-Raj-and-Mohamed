@@ -29,7 +29,7 @@ public class SimpleSprite implements DisplayableSprite {
 		this.centerY = centerY;
 		
 		if (image == null) {
-			try {
+			try { 
 				image = ImageIO.read(new File("res/Pacman.png"));
 			}
 			catch (IOException e) {
