@@ -4,18 +4,18 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class SimpleSprite implements DisplayableSprite {
+public class Pacman implements DisplayableSprite {
 
 	private static Image image;	
 	private double centerX = 0;
 	private double centerY = 0;
 	private double width = 50;
-	private double height = 50;
+	private double height = 55;
 	private boolean dispose = false;	
 
 	private final double VELOCITY = 200;
 
-	public SimpleSprite(double centerX, double centerY, double height, double width) {
+	public Pacman(double centerX, double centerY, double height, double width) {
 		this(centerX, centerY);
 		
 		this.height = height;
@@ -23,7 +23,7 @@ public class SimpleSprite implements DisplayableSprite {
 	}
 
 	
-	public SimpleSprite(double centerX, double centerY) {
+	public Pacman(double centerX, double centerY) {
 
 		this.centerX = centerX;
 		this.centerY = centerY;
