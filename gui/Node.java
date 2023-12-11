@@ -35,5 +35,16 @@ public class Node {
 		return position;
 	}
 	
-	
+	public void setPosition(Point2D position) {
+	    this.position = position;
+	}
+
+    public Map<String, Node> getNeighbors() {
+    	return neighbors;
+	}
+
+    public void setNeighbors(Map<String, Node> neighbors) {
+        this.neighbors = neighbors;
+	}
+
 }
