@@ -168,8 +168,19 @@ public class KeyboardInput implements KeyListener {
 			currentKeys[ keyCode ] = false;
 		}
 	}
+	
+	public boolean keyReleased( int keyCode) {
+		return keys[ keyCode ] == KeyState.PRESSED;
+		
+	}
 
 	public void keyTyped( KeyEvent e ) {
 		// Not needed
 	}
+
+//	public boolean keyPressed(int i) {
+//		// TODO Auto-generated method stub
+//		
+//		return true;
+//	}
 }

@@ -90,20 +90,21 @@ public class Pacman implements DisplayableSprite {
 		double velocityX = 0;
 		double velocityY = 0;
 		
+		
 		//LEFT	
-		if (keyboard.keyDown(37)) {
+		if (keyboard.keyReleased(37)) {
 			velocityX = -VELOCITY;
 		}
 		//UP
-		if (keyboard.keyDown(38)) {
+		else if (keyboard.keyDown(38)) {
 			velocityY = -VELOCITY;			
 		}
 		// RIGHT
-		if (keyboard.keyDown(39)) {
+		else if (keyboard.keyDown(39)) {
 			velocityX += VELOCITY;
 		}
 		// DOWN
-		if (keyboard.keyDown(40)) {
+		else if (keyboard.keyDown(40)) {
 			velocityY += VELOCITY;			
 		}
 
@@ -120,5 +121,39 @@ public class Pacman implements DisplayableSprite {
 	public void setDispose(boolean dispose) {
 		this.dispose = true;
 	}
+
+
+//	@Override
+//	public void keyTyped(KeyEvent e) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//
+//	@Override
+//    public void keyPressed(KeyEvent e) {
+//        int key = e.getKeyCode();
+//        
+//        double velocityX = 0;
+//        double velocityY = 0;
+//        
+//        if (key == KeyEvent.VK_LEFT) {
+//        	velocityX = -VELOCITY;
+//            
+//        } else if (key == KeyEvent.VK_RIGHT) {
+//        	velocityX += VELOCITY;
+//        } else if (key == KeyEvent.VK_UP) {
+//        	velocityY = -VELOCITY;
+//        } else if (key == KeyEvent.VK_DOWN) {
+//        	velocityY += VELOCITY;
+//        }
+//    }
+//
+//
+//	@Override
+//	public void keyReleased(KeyEvent e) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 }
