@@ -45,15 +45,41 @@ public class Vector {
 		if (other == null || getClass() != other.getClass()) {
 			return false;
 		}
-//		MyClass otherObj = (MyClass) other;						Need to make or change MyClass
-//		if (Math.abs(this.x - otherObj.x) < this.thresh) {
-//			if (Math.abs(this.y - otherObj.y) < this.thresh) {
-//	            return true;
-//			}
-//		}
+		MyClass otherObj = (MyClass) other;					
+		if (Math.abs(this.x - otherObj.x) < this.thresh) {
+			if (Math.abs(this.y - otherObj.y) < this.thresh) {
+	            return true;
+			}
+		}
 		return true;
 	}
 
+	public class MyClass {
+		private double x;
+		private double y;
+	
+		public double magnitudeSquared() {
+			return Math.pow(x, 2) + Math.pow(y,2);
+		}
+	
+		public double magnitude() {
+			return Math.sqrt(magnitudeSquared());
+		}
+
+		public Vector copy( ) {
+			return new Vector(this.x, this.y);
+		}
+	
+//		public Tuple<Double, Double> asTuple() {
+//			return new Tuple<>((int)this.x, (int)this.y);
+//		}
+	
+//		@Override
+//		public String toString() {
+//			return "<" + Integer.toString(this.x) + "," + Integer.toString(this.y) + ">"; 
+//		}
+	}
 }	
+
 
 
