@@ -43,7 +43,7 @@ public class PacmanMap implements Background{
 	public PacmanMap() {
 		// TODO Auto-generated constructor stub
 		try {
-			this.blocks = ImageIO.read(new File("res/Game%20Object%20(Arrays)/Pacman%20Barrier.png"));// Pacman BARRIER
+			this.blocks = ImageIO.read(new File("res/GameObject(Arrays)/PacmanBarrier.png"));// Pacman BARRIER
 			
 		}
 		
