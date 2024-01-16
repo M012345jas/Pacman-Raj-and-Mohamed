@@ -33,12 +33,17 @@ public class PacmanMap implements Background{
 		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
 		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
 		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
+		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
+		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
+		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
+		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
+		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
 	};
 	
 	public PacmanMap() {
 		// TODO Auto-generated constructor stub
 		try {
-			this.blocks = ImageIO.read(new File("res/Game%20Object%20(Arrays)/Pacman%20Block.png"));// Pacman BARRIER
+			this.blocks = ImageIO.read(new File("res/Game%20Object%20(Arrays)/Pacman%20Barrier.png"));// Pacman BARRIER
 			
 		}
 		
