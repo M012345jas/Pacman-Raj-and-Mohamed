@@ -36,7 +36,7 @@ public class AnimationFrame extends JFrame {
 	private boolean DISPLAY_TIMING = false;
 	
 	//scale at which to render the universe. When 1, each logical unit represents 1 pixel in both x and y dimension
-	private double scale = 1;
+	protected double scale = 1;
 	//point in universe on which the screen will center
 	private double logicalCenterX = 0;		
 	private double logicalCenterY = 0;
@@ -461,13 +461,13 @@ public class AnimationFrame extends JFrame {
 		}				
 	}
 
-	private int translateToScreenX(double logicalX) {
+	protected int translateToScreenX(double logicalX) {
 		return screenOffsetX + scaleLogicalX(logicalX - logicalCenterX);
 	}		
 	private int scaleLogicalX(double logicalX) {
 		return (int) Math.round(scale * logicalX);
 	}
-	private int translateToScreenY(double logicalY) {
+	protected int translateToScreenY(double logicalY) {
 		return screenOffsetY + scaleLogicalY(logicalY - logicalCenterY);
 	}		
 	private int scaleLogicalY(double logicalY) {

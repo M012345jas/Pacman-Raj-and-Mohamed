@@ -33,10 +33,6 @@ public class PacmanMap implements Background{
 		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
 		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
 		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
-		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
-		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
-		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
-		{0,0,0,1,0,0,0,0,0,1,1,1,1,1,1},
 	};
 	
 	public PacmanMap() {
@@ -76,6 +72,18 @@ public class PacmanMap implements Background{
 					
 			return newTile;
 		}
+	
+	public ArrayList<DisplayableSprite> getBarriers(){
+		ArrayList<DisplayableSprite> barriers = new ArrayList<DisplayableSprite>();
+		for (int col = 0; col < map[0].length; col++) {
+			for (int row = 0; row < map.length; row++) {
+				if((map[row][col] == 1)) {
+					barriers.add(new BarrierSprite(col * BASE, row * HEIGHT, (col + 1) * BASE, (row + 1) * HEIGHT, false));
+				}
+			}
+		}
+		return barriers;
+	}
 
 	@Override
 	public int getCol(double x) {

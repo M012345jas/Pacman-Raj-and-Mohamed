@@ -7,14 +7,25 @@ public class ShellUniverse implements Universe {
 	private ArrayList<DisplayableSprite> sprites = new ArrayList<DisplayableSprite>();
 	private ArrayList<Background> backgrounds = new ArrayList<Background>();
 	private ArrayList<DisplayableSprite> disposalList = new ArrayList<DisplayableSprite>();
+	private Background background = null;
+	
 
 	public ShellUniverse () {
-
+		super();
+		backgrounds = new ArrayList<Background>();
+//		background = new BlueLineBackground();
+		backgrounds.add(background);
+		
+		//Map Background
+		background = new PacmanMap();
+		ArrayList<DisplayableSprite> barriers = ((PacmanMap)background).getBarriers();
+		this.sprites.addAll(barriers);
+		
+		
 		this.setXCenter(0);
 		this.setYCenter(0);
 		player1 = new Pacman(0,0);
 		sprites.add(player1);
-			
 	}
 
 	public double getScale() {
