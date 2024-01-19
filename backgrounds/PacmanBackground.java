@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class BlueLineBackground implements Background {
+public class PacmanBackground implements Background {
 
     private Image GDbackground;
     private int backgroundWidth = 0;
@@ -13,7 +13,7 @@ public class BlueLineBackground implements Background {
     private double shiftX = 0;
     private double shiftY = 1150;
 
-    public BlueLineBackground() {
+    public PacmanBackground() {
     	try {
 
     		this.GDbackground = ImageIO.read(new File("res/pacman/Greenbackground.png"));// we need a new image

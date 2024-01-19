@@ -18,7 +18,7 @@ public class PacUniverse implements Universe {
 	public PacUniverse() {
 		super();
 		backgrounds = new ArrayList<Background>();
-		background = new BlueLineBackground();
+		background = new PacmanBackground();
 		backgrounds.add(background);
 
 		//import map/barriers
