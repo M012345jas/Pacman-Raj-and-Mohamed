@@ -6,8 +6,7 @@ public class CollisionDetection {
 
 	private double bounceFactorX = 1;
 	private double bounceFactorY = 1;
-	ArrayList<Class> collisionTargetTypes = null;
-	
+
 	public double getBounceFactorX() {
 		return bounceFactorX;
 	}
@@ -23,15 +22,6 @@ public class CollisionDetection {
 	public void setBounceFactorY(double bounceFactorY) {
 		this.bounceFactorY = bounceFactorY;
 	}
-	
-	public ArrayList<Class> getCollisionTargetTypes() {
-		return collisionTargetTypes;
-	}
-
-	public void setCollisionTargetTypes(ArrayList<Class> collisionTargetTypes) {
-		this.collisionTargetTypes = collisionTargetTypes;
-	}
-
 
 	public static boolean overlaps(DisplayableSprite spriteA, DisplayableSprite spriteB) {
 		return overlaps(
@@ -201,8 +191,13 @@ public class CollisionDetection {
 		return false;
 				
 	}
+
+	public void calculate2DBounce(VirtualSprite twoDBounce, DisplayableSprite sprite, ArrayList<DisplayableSprite> barriers, double velocityX, double velocityY, long actual_delta_time ) {
+		calculate2DBounce(twoDBounce, sprite, barriers, velocityX,  velocityY,  actual_delta_time, null);
+	}
+
 	
-	public VirtualSprite calculate2DBounce(VirtualSprite bounce, DisplayableSprite sprite, ArrayList<DisplayableSprite> barriers, double velocityX, double velocityY, long actual_delta_time) {
+	public VirtualSprite calculate2DBounce(VirtualSprite bounce, DisplayableSprite sprite, ArrayList<DisplayableSprite> barriers, double velocityX, double velocityY, long actual_delta_time, Class type) {
 
 		if (bounce == null) {
 			bounce = new VirtualSprite();
@@ -213,8 +208,6 @@ public class CollisionDetection {
 		bounce.velocityY = velocityY;
 		bounce.centerX = sprite.getCenterX();
 		bounce.centerY = sprite.getCenterY();
-		bounce.width = sprite.getWidth();
-		bounce.height = sprite.getHeight();
 		bounce.didBounce = false;		
 
 		//calculate new position assuming there are no changes in direction
@@ -226,10 +219,8 @@ public class CollisionDetection {
 		bounce.centerY += movementY;
 		
 		for (DisplayableSprite barrier : barriers) {
-
-			//if the target of the current sprite is not contained in a list of 'target' types, then do not attempt to 
-			//calculate a collision
-			if ( (sprite == barrier) || (collisionTargetTypes != null) && ( collisionTargetTypes.contains(barrier.getClass()) == false)) {
+						
+			if ( (sprite == barrier) || (barrier instanceof BarrierSprite == false)) {
 				continue;				
 			}
 						

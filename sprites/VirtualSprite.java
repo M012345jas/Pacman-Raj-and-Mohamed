@@ -81,4 +81,8 @@ public class VirtualSprite implements DisplayableSprite {
 		//ignore		
 	}
 	
+	public void setXCenter(double xCenter) {
+		// TODO Auto-generated method stub
+		this.centerX = xCenter;
+	}
 }

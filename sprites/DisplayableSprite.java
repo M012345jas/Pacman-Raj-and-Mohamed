@@ -19,13 +19,17 @@ public interface DisplayableSprite {
 	public double getWidth();
 
 	public double getCenterX();
-
+	
+	
 	public double getCenterY();
 	
 	public boolean getDispose();
 	
 	public void setDispose(boolean dispose);
 
-	public void update(Universe universe, KeyboardInput keyboard, long actual_delta_time);	
-	
+	public void update(Universe universe, KeyboardInput keyboard, long actual_delta_time);
+
+	public abstract void setXCenter(double d);
+
+
 }
