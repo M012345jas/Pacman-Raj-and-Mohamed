@@ -11,7 +11,7 @@ public class PacmanBackground implements Background {
     private int backgroundHeight = 0;
     private int offsetX = 0;
     private double shiftX = 0;
-    private double shiftY = 1150;
+    private double shiftY = 3250; // Background shifted down
 
     public PacmanBackground() {
     	try {

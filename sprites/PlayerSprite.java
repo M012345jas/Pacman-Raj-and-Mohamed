@@ -275,10 +275,10 @@ public class PlayerSprite implements DisplayableSprite {
 		}
 		
 		// This works
-		if (centerY > 2000) {
-			this.dispose = true;
-	
-		}
+//		if (centerY > 2000) {
+//			this.dispose = true;
+//	
+//		}
 		
 		//ShellAnimation.addScore(0);
 		
