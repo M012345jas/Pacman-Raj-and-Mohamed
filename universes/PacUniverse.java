@@ -22,8 +22,8 @@ public class PacUniverse implements Universe {
 		backgrounds.add(background);
 
 		//import map/barriers
-		background = new GameMap();
-		ArrayList<DisplayableSprite> barriers = ((GameMap)background).getBarriers();
+		background = new PacmanGameMap();
+		ArrayList<DisplayableSprite> barriers = ((PacmanGameMap)background).getBarriers();
 		this.sprites.addAll(barriers);
 		//this.sprites.addAll( ((GameMap)background).getSpike());
 

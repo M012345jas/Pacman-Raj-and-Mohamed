@@ -43,7 +43,7 @@ public class AnimationFrame extends JFrame {
 	private long minimum_delta_time = 1000 / FRAMES_PER_SECOND;	//MILLISECONDS
 	private long actual_delta_time = 0;							//MILLISECONDS
 	private long elapsed_time = 0;
-	private static int Attempts = 4;
+	private static int Attempts = 0;
 	private boolean isPaused = false;
 	private static int progess = 0;
 
@@ -317,7 +317,7 @@ public class AnimationFrame extends JFrame {
 	//ScoreBoard
 	private void updateControls() {
 		
-		this.lblTop.setText(String.format("Time: %9.1f;  Points: %3d;  Lives: %d", elapsed_time / 1000.0,ShellAnimation.getScore(),getAttempts()));
+		this.lblTop.setText(String.format("Time: %9.1f;  Points: %3d;  Attempts: %d", elapsed_time / 1000.0,ShellAnimation.getScore(),getAttempts()));
 		
 //		this.lblProgress.setText(String.format("%3.1f", ((AnimationFrame) player1).getProgress()));	
 //		setBarLabelBounds(this.lblProgress, ((AnimationFrame) player1).getProgress());
