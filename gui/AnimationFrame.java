@@ -13,12 +13,12 @@ import java.awt.event.MouseMotionAdapter;
 
 public class AnimationFrame extends JFrame {
 
-	final public static int FRAMES_PER_SECOND = 90; // We might change this just for smoother game play
+	final public static int FRAMES_PER_SECOND = 60; // We might change this just for smoother game play
 	final public static int SCREEN_HEIGHT = 600;
 	final public static int SCREEN_WIDTH = 800;
 
-	private int screenCenterX = SCREEN_WIDTH / 2;
-	private int screenCenterY = SCREEN_HEIGHT / 2;
+	private int screenCenterX = SCREEN_WIDTH / 20;
+	private int screenCenterY = SCREEN_HEIGHT - 500;
 
 	private double scale = 1;
 	//point in universe on which the screen will center
@@ -32,8 +32,8 @@ public class AnimationFrame extends JFrame {
 	private JButton btnPauseRun;
 	private JLabel lblTop;
 	private JLabel lblBottom;
-	private JLabel lblProgress;
-	private JLabel lblProgessLabel;
+//	private JLabel lblProgress;
+//	private JLabel lblProgessLabel;
 
 	private static boolean stop = false;
 
@@ -46,7 +46,9 @@ public class AnimationFrame extends JFrame {
 	private static int Attempts = 0;
 	private boolean isPaused = false;
 	private static int progess = 0;
-
+	
+	protected long total_elapsed_time = 0;
+	
 	private KeyboardInput keyboard = new KeyboardInput();
 	private Universe universe = null;
 
@@ -61,6 +63,12 @@ public class AnimationFrame extends JFrame {
 	private LoseFrame levelCompleted;
 	
 	private WinFrame levelFinished;
+	
+	//These variables control where the screen is centered in relation to the logical center of universe.
+		//Generally it makes sense to have these start at half screen width and height, so that the logical
+		//center is rendered in the center of the screen. Changing them will 'pan' the screen.
+		private int screenOffsetX = SCREEN_WIDTH / 100;
+		private int screenOffsetY = SCREEN_HEIGHT / 2;
 	
 	public AnimationFrame(Animation animation)
 	{
@@ -318,7 +326,7 @@ public class AnimationFrame extends JFrame {
 	private void updateControls() {
 		
 		this.lblTop.setText(String.format("Time: %9.1f;  Points: %3d;  Attempts: %d", elapsed_time / 1000.0,ShellAnimation.getScore(),getAttempts()));
-		
+		//this.lblTop.setText(String.format("Time: %9.3f;  offsetX: %5d; offsetY: %5d;  scale: %3.3f", total_elapsed_time / 1000.0, screenOffsetX, screenOffsetY, scale));
 //		this.lblProgress.setText(String.format("%3.1f", ((AnimationFrame) player1).getProgress()));	
 //		setBarLabelBounds(this.lblProgress, ((AnimationFrame) player1).getProgress());
 		

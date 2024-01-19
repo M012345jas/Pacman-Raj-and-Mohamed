@@ -75,8 +75,8 @@ public class PacUniverse implements Universe {
 	}
 
 	@Override
-	public double getScale() {
-		return 1;
+	public double getScale() {// Camera zoom usage
+		return 0.154;
 	}
 
 	@Override
@@ -116,7 +116,7 @@ public class PacUniverse implements Universe {
 
 	@Override
 	public boolean centerOnPlayer() {
-		return true ;  //that took so long to find
+		return false ;  //that took so long to find
 	}
 
 	@Override

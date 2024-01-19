@@ -9,7 +9,7 @@ public class PacmanGameMap implements Background {
 	private static final int TILE_WIDTH = 50;
 	private static final int TILE_HEIGHT = 50;
 	
-	private Image pacmanBarrier; //6
+	private Image pacmanBarrier; //1
 	
 	
 	private int maxRows = 0;
