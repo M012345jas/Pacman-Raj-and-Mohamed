@@ -15,10 +15,10 @@ public class AnimationFrame extends JFrame {
 
 	final public static int FRAMES_PER_SECOND = 60; // We might change this just for smoother game play
 	final public static int SCREEN_HEIGHT = 600;
-	final public static int SCREEN_WIDTH = 800;
+	final public static int SCREEN_WIDTH = 550;
 
-	private int screenCenterX = SCREEN_WIDTH / 20;
-	private int screenCenterY = SCREEN_HEIGHT - 500;
+	private int screenCenterX = SCREEN_WIDTH / 9;
+	private int screenCenterY = SCREEN_HEIGHT - 532;
 
 	private double scale = 1;
 	//point in universe on which the screen will center

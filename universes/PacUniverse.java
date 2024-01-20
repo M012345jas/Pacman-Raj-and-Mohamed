@@ -35,12 +35,12 @@ public class PacUniverse implements Universe {
 
 		sprites.add(player1);
 		
-		sprites.add(new Endzone(4000,714.5)); //It spawns a this sprite in the universe
-		/*sprites.add(new TreehouseSprite(200, 550));*/ // This tree house just does not really if the theme
-		
-		sprites.add(new Endzone2(12000, 714.5));
-		sprites.add(new Endzone3(19500, 714.5));
-		
+//		sprites.add(new Endzone(4000,714.5)); //It spawns a this sprite in the universe
+//		/*sprites.add(new TreehouseSprite(200, 550));*/ // This tree house just does not really if the theme
+//		
+//		sprites.add(new Endzone2(12000, 714.5));
+//		sprites.add(new Endzone3(19500, 714.5));
+//		
 		sprites.add(new Endzone4(23750, 714.5));
 
 		
