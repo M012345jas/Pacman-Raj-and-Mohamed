@@ -43,7 +43,7 @@ public class AnimationFrame extends JFrame {
 	private long minimum_delta_time = 1000 / FRAMES_PER_SECOND;	//MILLISECONDS
 	private long actual_delta_time = 0;							//MILLISECONDS
 	private long elapsed_time = 0;
-	private static int Attempts = 0;
+	private static int lives = 3;
 	private boolean isPaused = false;
 	private static int progess = 0;
 	
@@ -59,8 +59,11 @@ public class AnimationFrame extends JFrame {
 	private ArrayList<Background> backgrounds = null;
 	private Background background = null;
 	boolean centreOnPlayer = false;
-	int universeLevel = 3;
-	private LoseFrame levelCompleted;
+	int universeLevel = 0;
+	
+	private GameOverFrame gameover;
+	
+	private LoseFrame levelFailed;
 	
 	private WinFrame levelFinished;
 	
@@ -239,16 +242,16 @@ public class AnimationFrame extends JFrame {
 				universe.update(keyboard, actual_delta_time);
 				updateControls();
 
-				//detect if playersprite is in endzone and display a dialogue
+				//when Pacman collects all the coins, you win
 				if (universe.isInEndZone() == true) {
-					levelFinished = new WinFrame(universe.getAttempts(), "Play Again");					
+					levelFinished = new WinFrame(universe.getAttempts(), "Congradulations");					
 					levelFinished.setLocationRelativeTo(this);
 					levelFinished.setModalityType(ModalityType.APPLICATION_MODAL);
 					levelFinished.setVisible(true);
 					levelFinished.dispose();
 					universe.exitEndZone();
+					stop = true;
 					
-					//Man this is sad, we wanted to have multiples levels but wedon't have time anymore :(
 //					if (universe != null) {
 //						sprites = universe.getSprites();
 //						player1 = universe.getPlayer1();
@@ -281,25 +284,44 @@ public class AnimationFrame extends JFrame {
 					((ShellAnimation) animation).restart();
 					universe = animation.getNextUniverse();
 					keyboard.poll();
-					setAttempts(getAttempts() + 1);
+					setLives(getLives() - 1);
 				
-//				 I am not sure if we need this so I disabled it
-				if(getAttempts()==0) {
-					universe=null;
+//				This is going to be the gave over Frame, this will activate once pacman lost all its lives
+				if(getLives()==0) {
+					gameover = new GameOverFrame(universe.getAttempts(), "Quit Game");					
+					gameover.setLocationRelativeTo(this);
+					gameover.setModalityType(ModalityType.APPLICATION_MODAL);
+					gameover.setVisible(true);
+					gameover.dispose();
+					//universe.exitEndZone();
+					gameover.dispose();
+					
+					stop = true;
 				}
-				if (universe.levelCompleted() == true) {
+				
+				
+//				if(ShellAnimation.getScore() == 600) {
+//					levelFinished = new WinFrame(universe.getAttempts(), "Play Again");					
+//					levelFinished.setLocationRelativeTo(this);
+//					levelFinished.setModalityType(ModalityType.APPLICATION_MODAL);
+//					levelFinished.setVisible(true);
+//					levelFinished.dispose();
+//					
+//					levelFinished.dispose();
+//					
+//					stop = true;
+//				}
+				
+				if (getLives()== 3 || getLives() == 2 || getLives() == 1) {
 
-					if (universeLevel == 0) {
-						levelCompleted = new LoseFrame(universe.getAttempts(), "FINISH GAME");
-					} 
-					else {
-						levelCompleted = new LoseFrame(universe.getAttempts(), "RETRY");
-					}
+					//else {
+						levelFailed = new LoseFrame(universe.getAttempts(), "RETRY");
+					//}
 
-					levelCompleted.setLocationRelativeTo(this);
-					levelCompleted.setModalityType(ModalityType.APPLICATION_MODAL);
-					levelCompleted.setVisible(true);
-					levelCompleted.dispose();
+					levelFailed.setLocationRelativeTo(this);
+					levelFailed.setModalityType(ModalityType.APPLICATION_MODAL);
+					levelFailed.setVisible(true);
+					levelFailed.dispose();
 
 //					universe = animation.getNextUniverse();
 //					if (universe != null) {
@@ -325,7 +347,7 @@ public class AnimationFrame extends JFrame {
 	//ScoreBoard
 	private void updateControls() {
 		
-		this.lblTop.setText(String.format("Time: %9.1f;  Points: %3d;  Attempts: %d", elapsed_time / 1000.0,ShellAnimation.getScore(),getAttempts()));
+		this.lblTop.setText(String.format("Time: %9.1f;  Points: %3d;  Lives: %d", elapsed_time / 1000.0,ShellAnimation.getScore(),getLives()));
 		//this.lblTop.setText(String.format("Time: %9.3f;  offsetX: %5d; offsetY: %5d;  scale: %3.3f", total_elapsed_time / 1000.0, screenOffsetX, screenOffsetY, scale));
 //		this.lblProgress.setText(String.format("%3.1f", ((AnimationFrame) player1).getProgress()));	
 //		setBarLabelBounds(this.lblProgress, ((AnimationFrame) player1).getProgress());
@@ -505,12 +527,12 @@ public class AnimationFrame extends JFrame {
 		dispose();	
 	}
 
-	public static int getAttempts() {
-		return Attempts;
+	public static int getLives() {
+		return lives;
 	}
 
-	public static void setAttempts(int Attempts) {
-		AnimationFrame.Attempts = Attempts;
+	public static void setLives(int lives) {
+		AnimationFrame.lives = lives;
 	}
 	
 	public static int getProgress() {

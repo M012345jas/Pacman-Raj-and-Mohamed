@@ -186,7 +186,7 @@ public class PacUniverse implements Universe {
 	
 	private boolean detectInEndZone() {
 		
-		if (this.player1.getCenterX() > 23750) {
+		if (ShellAnimation.getScore() == 500) {
 			return true;
 		}
 		else {	
@@ -239,6 +239,7 @@ public class PacUniverse implements Universe {
 		inEndZone = false;
 		this.player1.setXCenter( this.player1.getCenterX() - 23350);
 	}
-
+	
+	
 	
 }
