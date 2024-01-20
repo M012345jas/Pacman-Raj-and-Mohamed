@@ -57,9 +57,12 @@ public class PacUniverse implements Universe {
 		sprites.add(new Endzone4(23750, 714.5));
 
 		
-		//Secret coins
-		sprites.add(new Coin(300,625));
-		sprites.add(new Coin(14800,370));
+		//Coin
+		sprites.add(new Coin(125,2975));
+		sprites.add(new Coin(125,150));
+		sprites.add(new Coin(3025,150));
+		sprites.add(new Coin(3025,2975));
+		
 		sprites.add(new Coin(22787.5, 620));
 		
 		//Hit boxes
@@ -186,7 +189,7 @@ public class PacUniverse implements Universe {
 	
 	private boolean detectInEndZone() {
 		
-		if (ShellAnimation.getScore() == 500) {
+		if (ShellAnimation.getScore() == 2000) {
 			return true;
 		}
 		else {	
