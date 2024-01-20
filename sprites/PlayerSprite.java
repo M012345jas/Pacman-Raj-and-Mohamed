@@ -21,7 +21,7 @@ public class PlayerSprite implements DisplayableSprite {
 	private final double MINIMUM_X_VELOCITY = 0;
 	private final double MINIMUM_Y_VELOCITY = 0;
 	
-	private final double INITIAL_JUMP_VELOCITY = 1000;
+	//private final double INITIAL_JUMP_VELOCITY = 1000;
 	
 	private CollisionDetection collisionDetection;
 	private VirtualSprite virtual = new VirtualSprite();
