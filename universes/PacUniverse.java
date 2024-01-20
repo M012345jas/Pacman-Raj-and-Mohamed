@@ -31,7 +31,7 @@ public class PacUniverse implements Universe {
 		this.setXCenter(0);
 		this.setYCenter(0);
 
-		player1 = new PlayerSprite(400,625);  //400, 650  //16000
+		player1 = new PlayerSprite(1575,1575);  //400, 650  //16000
 
 		sprites.add(player1);
 		
