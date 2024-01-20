@@ -146,8 +146,10 @@ public class PlayerSprite implements DisplayableSprite {
 		
 		//behaviour is dependant on whether the sprite is on the 'ground' or not. 
 //		boolean onGround = isOnGround(universe);
-		checkCollisionWithCheckpoint(universe.getSprites());
+		//checkCollisionWithCheckpoint(universe.getSprites());
 		checkCollisionWithCoin(universe.getSprites());
+		checkCollisionWithPortal(universe.getSprites());
+		checkCollisionWithPortalSideWays(universe.getSprites());
 		//design is to only allow change of x velocity while on ground
 //		if (onGround) {
 //
@@ -249,7 +251,7 @@ public class PlayerSprite implements DisplayableSprite {
 	private void checkDeath(Universe universe) {
 		
 		for (DisplayableSprite sprite : universe.getSprites()) {
-			if (sprite instanceof SpikeSprite || sprite instanceof GDSpikes || sprite instanceof HitBox || sprite instanceof HitBoxSideWays) {
+			if (sprite instanceof SpikeSprite || sprite instanceof GhostSprite || sprite instanceof HitBox || sprite instanceof HitBoxSideWays) {
 				// This does not work; after several attempts ha get it attempts we finally made the spike sprite kill the player
 				if (CollisionDetection.overlaps(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY(), sprite.getMinX(),sprite.getMinY(), sprite.getMaxX(), sprite.getMaxY())){
 					if (sprite instanceof SpikeSprite) {
@@ -257,13 +259,11 @@ public class PlayerSprite implements DisplayableSprite {
 						
 					}
 					
-					ShellAnimation.setScore(0);
+					//ShellAnimation.setScore(0);
 					
-					if (sprite instanceof GDSpikes) {
-						this.dispose = true;
-					}
 					
-					if (sprite instanceof HitBox) {
+					
+					if (sprite instanceof GhostSprite) {
 						this.dispose = true;
 					}
 					
@@ -274,7 +274,7 @@ public class PlayerSprite implements DisplayableSprite {
 			}
 		}
 		
-		// This works
+		 //This works
 //		if (centerY > 2000) {
 //			this.dispose = true;
 //	
@@ -301,6 +301,54 @@ public class PlayerSprite implements DisplayableSprite {
 //		return onGround;
 //	}
 //	
+	
+	private void checkCollisionWithPortal(ArrayList<DisplayableSprite> sprites) {
+
+		for (DisplayableSprite sprite : sprites) {
+			if (sprite instanceof Teleport) {
+				if (CollisionDetection.overlaps(this.getMinX(), this.getMinY(), 
+						this.getMaxX(), this.getMaxY(), 
+						sprite.getMinX(),sprite.getMinY(), 
+						sprite.getMaxX(), sprite.getMaxY())) {
+
+					sprite.setDispose(false);
+					if (centerX < 15) {
+						centerX = 3135;
+					}
+					
+					if (centerX > 3135) {
+						centerX = 15;
+					}
+					break;					
+				}
+			}
+		}
+
+	}
+	
+	private void checkCollisionWithPortalSideWays(ArrayList<DisplayableSprite> sprites) {
+
+		for (DisplayableSprite sprite : sprites) {
+			if (sprite instanceof TeleportSideWays) {
+				if (CollisionDetection.overlaps(this.getMinX(), this.getMinY(), 
+						this.getMaxX(), this.getMaxY(), 
+						sprite.getMinX(),sprite.getMinY(), 
+						sprite.getMaxX(), sprite.getMaxY())) {
+
+					sprite.setDispose(false);
+					if (centerY < 15) {
+						centerY = 3085;
+					}
+					
+					if (centerY > 3085) {
+						centerY = 15;
+					}
+					break;					
+				}
+			}
+		}
+
+	}
 	private void checkCollisionWithCoin(ArrayList<DisplayableSprite> sprites) {
 
 		for (DisplayableSprite sprite : sprites) {
@@ -319,34 +367,34 @@ public class PlayerSprite implements DisplayableSprite {
 
 	}
 	
-	private void checkCollisionWithCheckpoint(ArrayList<DisplayableSprite> sprites) {
-		for (DisplayableSprite sprite : sprites) {
-			if (sprite instanceof Endzone  ||  sprite instanceof Endzone2  ||  sprite instanceof Endzone3  ||  sprite instanceof Endzone4) {
-				if (CollisionDetection.overlaps(this.getMinX(), this.getMinY(), 
-						this.getMaxX(), this.getMaxY(), 
-						sprite.getMinX(),sprite.getMinY(), 
-						sprite.getMaxX(), sprite.getMaxY())) {
-					if (sprite instanceof Endzone) {
-						checkpointOneCrossed = true;
-					}
-					if (sprite instanceof Endzone2){
-						checkpointTwoCrossed = true;
-						checkpointOneCrossed = false;
-					}
-					if (sprite instanceof Endzone3) {
-						checkpointThreeCrossed = true;
-						checkpointTwoCrossed = false;
-					}
-					if (sprite instanceof Endzone4) {
-						checkpointFourCrossed = false;
-						checkpointThreeCrossed = false;
-					}
-					break;
-				}
-			}
-		}
-
-	}
+//	private void checkCollisionWithCheckpoint(ArrayList<DisplayableSprite> sprites) {
+//		for (DisplayableSprite sprite : sprites) {
+//			if (sprite instanceof Endzone  ||  sprite instanceof Endzone2  ||  sprite instanceof Endzone3  ||  sprite instanceof Endzone4) {
+//				if (CollisionDetection.overlaps(this.getMinX(), this.getMinY(), 
+//						this.getMaxX(), this.getMaxY(), 
+//						sprite.getMinX(),sprite.getMinY(), 
+//						sprite.getMaxX(), sprite.getMaxY())) {
+//					if (sprite instanceof Endzone) {
+//						checkpointOneCrossed = true;
+//					}
+//					if (sprite instanceof Endzone2){
+//						checkpointTwoCrossed = true;
+//						checkpointOneCrossed = false;
+//					}
+//					if (sprite instanceof Endzone3) {
+//						checkpointThreeCrossed = true;
+//						checkpointTwoCrossed = false;
+//					}
+//					if (sprite instanceof Endzone4) {
+//						checkpointFourCrossed = false;
+//						checkpointThreeCrossed = false;
+//					}
+//					break;
+//				}
+//			}
+//		}
+//
+//	}
 	
 	public void setXCenter(double xCenter) {
 		

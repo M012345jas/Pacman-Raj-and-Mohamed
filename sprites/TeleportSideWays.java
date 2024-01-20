@@ -4,21 +4,21 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class UpsideDownGDSpike implements DisplayableSprite {
+public class TeleportSideWays implements DisplayableSprite {
 
 	private static Image image;
-	private boolean visible = true;
+	private boolean visible = false;//This is to hide the teleport hitboxes
 	private double centerX = 0;
 	private double centerY = 0;
-	private double width = 50;
-	private double height = 50;
+	private double width = 75;
+	private double height = 25;
 	private boolean dispose = false;	
 	
-	public UpsideDownGDSpike(double minX, double minY, double maxX, double maxY, boolean visible) {
+	public TeleportSideWays(double minX, double minY, double maxX, double maxY, boolean visible) {
 		
 		if (image == null && visible) {
 			try {
-				image = ImageIO.read(new File("res/Sprites/UpsideDownGDspike.png"));
+				image = ImageIO.read(new File("res/Sprites/GrassBlock.jpg"));
 			}
 			catch (IOException e) {
 				e.printStackTrace();
@@ -33,6 +33,10 @@ public class UpsideDownGDSpike implements DisplayableSprite {
 		
 	}
 	
+	public TeleportSideWays(double centerX,double centerY) {
+		this.centerX = centerX;
+		this.centerY = centerY;
+	}
 
 	public Image getImage() {
 		return image;

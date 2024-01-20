@@ -35,6 +35,19 @@ public class PacUniverse implements Universe {
 
 		sprites.add(player1);
 		
+		//These sprite hitbox will be used to teleport pacman across the map
+		sprites.add(new Teleport(15,975));
+		sprites.add(new Teleport(15,2125));
+		
+		sprites.add(new Teleport(3135,975));
+		sprites.add(new Teleport(3135,2125));
+		
+		sprites.add(new TeleportSideWays(975,15));
+		sprites.add(new TeleportSideWays(2175,15));
+		
+		sprites.add(new TeleportSideWays(975,3085));
+		sprites.add(new TeleportSideWays(2175,3085));
+		
 //		sprites.add(new Endzone(4000,714.5)); //It spawns a this sprite in the universe
 //		/*sprites.add(new TreehouseSprite(200, 550));*/ // This tree house just does not really if the theme
 //		
@@ -52,7 +65,8 @@ public class PacUniverse implements Universe {
 		//Hit boxes
 		sprites.add(new HitBox(13075, 435));
 		
-		
+		//Ghost Sprite
+		sprites.add(new GhostSprite(400, 2001));
 
 
 		

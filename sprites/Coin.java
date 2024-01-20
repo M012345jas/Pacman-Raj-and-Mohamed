@@ -18,7 +18,7 @@ public class Coin implements DisplayableSprite {
 		
 		if (image == null && visible) {
 			try {
-				image = ImageIO.read(new File("res/Asthetics/coin.png"));
+				image = ImageIO.read(new File("res/pacmanSprites/coin.png"));
 				System.out.println(this.getClass().toString());
 			}
 			catch (IOException e) {

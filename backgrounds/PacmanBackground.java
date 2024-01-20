@@ -16,7 +16,7 @@ public class PacmanBackground implements Background {
     public PacmanBackground() {
     	try {
 
-    		this.GDbackground = ImageIO.read(new File("res/pacman/Greenbackground.png"));// we need a new image
+    		this.GDbackground = ImageIO.read(new File("res/pacmanSprites/Greenbackground.png"));// we need a new image
     		backgroundWidth = (int) (GDbackground.getWidth(null) * 6);
     		backgroundHeight = (int) (GDbackground.getWidth(null)* 8);
     		

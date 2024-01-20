@@ -4,35 +4,33 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class GDSpikes implements DisplayableSprite {
+public class Teleport implements DisplayableSprite {
 
 	private static Image image;
-	private boolean visible = true;
+	private boolean visible = false;//this is to hide the teleport hitboxes
 	private double centerX = 0;
 	private double centerY = 0;
-	private double width = 50;
-	private double height = 50;
+	private double width = 25;
+	private double height = 75;
 	private boolean dispose = false;	
 	
-	public GDSpikes(double minX, double minY, double maxX, double maxY, boolean visible) {
+public Teleport(double centerX, double centerY) {
 		
 		if (image == null && visible) {
 			try {
-				image = ImageIO.read(new File("res/Sprites/GeometryDashSpike.png"));
+				image = ImageIO.read(new File("res/Sprites/GrassBlock.jpg"));
+				System.out.println(this.getClass().toString());
 			}
 			catch (IOException e) {
 				e.printStackTrace();
 			}		
 		}
 		
-		this.centerX = (minX + maxX) / 2;
-		this.centerY = (minY + maxY) / 2;
-		this.width = maxX - minX;
-		this.height = maxY - minY;
-		this.visible = visible;
-		
+		this.centerX = centerX;
+		this.centerY = centerY;
 	}
 	
+
 
 	public Image getImage() {
 		return image;
