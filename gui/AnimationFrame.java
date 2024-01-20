@@ -17,7 +17,7 @@ public class AnimationFrame extends JFrame {
 	final public static int SCREEN_HEIGHT = 600;
 	final public static int SCREEN_WIDTH = 550;
 
-	private int screenCenterX = SCREEN_WIDTH / 9;
+	private int screenCenterX = SCREEN_WIDTH / 18;
 	private int screenCenterY = SCREEN_HEIGHT - 532;
 
 	private double scale = 1;
