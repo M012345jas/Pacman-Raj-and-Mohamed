@@ -314,7 +314,7 @@ public class PacUniverse implements Universe {
 	
 	private boolean detectInEndZone() {
 		
-		if (ShellAnimation.getScore() == 2000) {
+		if (ShellAnimation.getScore() >= 13900) {
 			return true;
 		}
 		else {	
