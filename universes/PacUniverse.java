@@ -455,6 +455,30 @@ public class PacUniverse implements Universe {
 		
 		sprites.add(new SmallCoins(2830,1090));
 		sprites.add(new SmallCoins(2830,990));
+		sprites.add(new SmallCoins(2630,990));
+		sprites.add(new SmallCoins(2530,990));
+		sprites.add(new SmallCoins(2530,890));
+		sprites.add(new SmallCoins(2530,790));
+		sprites.add(new SmallCoins(2530,690));
+		sprites.add(new SmallCoins(2530,590));
+		sprites.add(new SmallCoins(2530,490));
+		sprites.add(new SmallCoins(2730,990));
+		sprites.add(new SmallCoins(2730,890));
+		sprites.add(new SmallCoins(2730,790));
+		sprites.add(new SmallCoins(2730,690));
+		sprites.add(new SmallCoins(2730,590));
+		sprites.add(new SmallCoins(2730,510));
+		sprites.add(new SmallCoins(2830,410));
+		sprites.add(new SmallCoins(2830,340));
+		sprites.add(new SmallCoins(2530,250));
+		sprites.add(new SmallCoins(2730,330));
+		sprites.add(new SmallCoins(2630,330));
+		sprites.add(new SmallCoins(2530,330));
+		sprites.add(new SmallCoins(2830,490));
+		sprites.add(new SmallCoins(2830,590));
+		sprites.add(new SmallCoins(2930,590));
+		
+		
 		
 		
 //		//Hit boxes
