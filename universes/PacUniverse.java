@@ -200,21 +200,77 @@ public class PacUniverse implements Universe {
 		sprites.add(new SmallCoins(2250,410));
 		sprites.add(new SmallCoins(2300,410));
 		sprites.add(new SmallCoins(2350,410));
-		sprites.add(new SmallCoins(2400,185));
-		sprites.add(new SmallCoins(2400,260));
-		sprites.add(new SmallCoins(2400,335));
+		sprites.add(new SmallCoins(2400,210));
+		sprites.add(new SmallCoins(2400,310));
 		sprites.add(new SmallCoins(2400,410));
-		sprites.add(new SmallCoins(2400,485));
-		sprites.add(new SmallCoins(2400,560));
-		sprites.add(new SmallCoins(2400,635));
-		sprites.add(new SmallCoins(2350,635));		
-		sprites.add(new SmallCoins(2300,635));
-		sprites.add(new SmallCoins(2250,635));
-		sprites.add(new SmallCoins(2300,635));
-		sprites.add(new SmallCoins(2250,635));
-		sprites.add(new SmallCoins(2200,635));
-		sprites.add(new SmallCoins(2150,635));
-		sprites.add(new SmallCoins(2100,635));
+		sprites.add(new SmallCoins(2400,510));
+		sprites.add(new SmallCoins(2400,610));
+		sprites.add(new SmallCoins(2400,660));
+		sprites.add(new SmallCoins(2300,660));
+		sprites.add(new SmallCoins(2200,660));
+		sprites.add(new SmallCoins(2100,660));
+		sprites.add(new SmallCoins(2000,660));
+		sprites.add(new SmallCoins(1900,660));
+		sprites.add(new SmallCoins(1800,660));
+		sprites.add(new SmallCoins(1700,660));
+		sprites.add(new SmallCoins(2000,560));
+		sprites.add(new SmallCoins(2000,460));
+		sprites.add(new SmallCoins(2000,360));
+		sprites.add(new SmallCoins(2000,260));
+		sprites.add(new SmallCoins(1900,360));
+		sprites.add(new SmallCoins(1900,260));
+		sprites.add(new SmallCoins(1900,460));
+		sprites.add(new SmallCoins(1900,560));
+		
+		sprites.add(new SmallCoins(1750,360));
+		sprites.add(new SmallCoins(1750,460));
+		sprites.add(new SmallCoins(1650,460));
+		sprites.add(new SmallCoins(1550,460));
+		sprites.add(new SmallCoins(1475,460));
+		sprites.add(new SmallCoins(1390,460));
+		sprites.add(new SmallCoins(1390,360));
+		sprites.add(new SmallCoins(1260,360));
+		sprites.add(new SmallCoins(1260,260));
+		sprites.add(new SmallCoins(1260,460));
+		sprites.add(new SmallCoins(1260,560));
+		sprites.add(new SmallCoins(1170,360));
+		sprites.add(new SmallCoins(1170,260));
+		sprites.add(new SmallCoins(1170,460));
+		sprites.add(new SmallCoins(1170,560));
+		sprites.add(new SmallCoins(1170,660));
+		sprites.add(new SmallCoins(1270,660));
+		sprites.add(new SmallCoins(1370,660));
+		sprites.add(new SmallCoins(1470,660));
+		sprites.add(new SmallCoins(1070,660));
+		sprites.add(new SmallCoins(885,660));
+		sprites.add(new SmallCoins(770,660));
+		sprites.add(new SmallCoins(770,560));
+		sprites.add(new SmallCoins(770,460));
+		sprites.add(new SmallCoins(770,360));
+		sprites.add(new SmallCoins(770,260));
+		sprites.add(new SmallCoins(985,660));
+		sprites.add(new SmallCoins(985,560));
+		sprites.add(new SmallCoins(985,460));
+		sprites.add(new SmallCoins(985,360));
+		sprites.add(new SmallCoins(985,260));
+		sprites.add(new SmallCoins(875,410));
+		sprites.add(new SmallCoins(770,460));
+		
+		sprites.add(new SmallCoins(630,560));
+		sprites.add(new SmallCoins(630,660));
+		sprites.add(new SmallCoins(630,760));
+		sprites.add(new SmallCoins(630,860));
+		sprites.add(new SmallCoins(630,960));
+		sprites.add(new SmallCoins(545,960));
+		sprites.add(new SmallCoins(450,960));
+		sprites.add(new SmallCoins(450,860));
+		sprites.add(new SmallCoins(450,760));
+		sprites.add(new SmallCoins(450,660));
+		sprites.add(new SmallCoins(350,960));
+		
+		
+		
+		
 		
 //		//Hit boxes
 //		sprites.add(new HitBox(13075, 435));
@@ -340,7 +396,7 @@ public class PacUniverse implements Universe {
 	
 	private boolean detectInEndZone() {
 		
-		if (ShellAnimation.getScore() >= 20000) {
+		if (ShellAnimation.getScore() >= 13900) {
 			return true;
 		}
 		else {	
