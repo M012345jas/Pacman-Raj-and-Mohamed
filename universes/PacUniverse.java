@@ -404,6 +404,21 @@ public class PacUniverse implements Universe {
 		
 		sprites.add(new SmallCoins(2610,2170));
 		sprites.add(new SmallCoins(2710,1990));
+		sprites.add(new SmallCoins(2410,1790));
+		sprites.add(new SmallCoins(2410,1690));
+		sprites.add(new SmallCoins(2410,1590));
+		sprites.add(new SmallCoins(2410,1490));
+		sprites.add(new SmallCoins(2410,1390));
+		sprites.add(new SmallCoins(2410,1290));
+		sprites.add(new SmallCoins(2410,1190));
+		sprites.add(new SmallCoins(2610,1990));
+		sprites.add(new SmallCoins(2510,1990));
+		sprites.add(new SmallCoins(2410,1990));
+		sprites.add(new SmallCoins(2410,1870));
+		sprites.add(new SmallCoins(2510,1870));
+		sprites.add(new SmallCoins(2610,1870));
+		sprites.add(new SmallCoins(2710,1870));
+		sprites.add(new SmallCoins(2810,1870));
 		sprites.add(new SmallCoins(2710,2090));
 		sprites.add(new SmallCoins(2710,2170));
 		sprites.add(new SmallCoins(2710,2270));
@@ -412,6 +427,34 @@ public class PacUniverse implements Universe {
 		sprites.add(new SmallCoins(2710,2570));
 		sprites.add(new SmallCoins(2810,2170));
 		
+		sprites.add(new SmallCoins(2830,2570));
+		sprites.add(new SmallCoins(2930,2550));
+		sprites.add(new SmallCoins(2830,2670));
+		sprites.add(new SmallCoins(2830,2770));
+		sprites.add(new SmallCoins(2730,2770));
+		sprites.add(new SmallCoins(2630,2770));
+		sprites.add(new SmallCoins(2530,2770));
+		sprites.add(new SmallCoins(2570,2870));
+		sprites.add(new SmallCoins(2830,2070));
+		sprites.add(new SmallCoins(2830,1970));
+		
+		sprites.add(new SmallCoins(2530,1190));
+		sprites.add(new SmallCoins(2630,1190));
+		sprites.add(new SmallCoins(2630,1270));
+		sprites.add(new SmallCoins(2630,1370));
+		sprites.add(new SmallCoins(2630,1470));
+		sprites.add(new SmallCoins(2730,1490));
+		sprites.add(new SmallCoins(2830,1490));
+		sprites.add(new SmallCoins(2830,1590));
+		sprites.add(new SmallCoins(2730,1590));
+		sprites.add(new SmallCoins(2630,1590));
+		sprites.add(new SmallCoins(2630,1690));
+		sprites.add(new SmallCoins(2730,1690));
+		sprites.add(new SmallCoins(2730,1190));
+		sprites.add(new SmallCoins(2830,1190));
+		
+		sprites.add(new SmallCoins(2830,1090));
+		sprites.add(new SmallCoins(2830,990));
 		
 		
 //		//Hit boxes
