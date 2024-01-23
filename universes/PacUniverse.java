@@ -400,7 +400,7 @@ public class PacUniverse implements Universe {
 			return true;
 		}
 		else {	
-			return false;
+			return false;//ff
 		}
 	}
 	
