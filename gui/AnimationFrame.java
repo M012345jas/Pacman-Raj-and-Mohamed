@@ -130,14 +130,14 @@ public class AnimationFrame extends JFrame {
 		getContentPane().setComponentZOrder(btnPauseRun, 0);
 
 		lblTop = new JLabel("Time: ");
-		lblTop.setForeground(Color.WHITE);
+		lblTop.setForeground(Color.GREEN);
 		lblTop.setFont(new Font("Tahoma", Font.BOLD, 25));
 		lblTop.setBounds(16, 22, SCREEN_WIDTH - 16, 30);
 		getContentPane().add(lblTop);
 		getContentPane().setComponentZOrder(lblTop, 0);
 
 		lblBottom = new JLabel("Example");
-		lblBottom.setForeground(Color.WHITE);//score board colour
+		lblBottom.setForeground(Color.GREEN);//score board colour
 		lblBottom.setFont(new Font("Consolas", Font.BOLD, 30));
 		lblBottom.setBounds(16, SCREEN_HEIGHT - 30 - 16, SCREEN_WIDTH - 16, 36);
 		lblBottom.setHorizontalAlignment(SwingConstants.CENTER);

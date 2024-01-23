@@ -255,21 +255,13 @@ public class PlayerSprite implements DisplayableSprite {
 			if (sprite instanceof SpikeSprite || sprite instanceof GhostSprite || sprite instanceof HitBox || sprite instanceof HitBoxSideWays) {
 				// This does not work; after several attempts ha get it attempts we finally made the spike sprite kill the player
 				if (CollisionDetection.overlaps(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY(), sprite.getMinX(),sprite.getMinY(), sprite.getMaxX(), sprite.getMaxY())){
-					if (sprite instanceof SpikeSprite) {
-						this.dispose = true;
-						
-					}
-					
-					//ShellAnimation.setScore(0);
-					
+							
 					
 					
 					if (sprite instanceof GhostSprite) {
 						this.dispose = true;
-					}
-					
-					if (sprite instanceof HitBoxSideWays) {
-						this.dispose = true;
+						ShellAnimation.setScore(0);
+
 					}
 				}
 			}
@@ -360,7 +352,7 @@ public class PlayerSprite implements DisplayableSprite {
 						sprite.getMaxX(), sprite.getMaxY())) {
 
 					sprite.setDispose(true);
-					ShellAnimation.addScore(500);
+					ShellAnimation.addScore(50);
 					break;					
 				}
 			}
@@ -374,7 +366,7 @@ public class PlayerSprite implements DisplayableSprite {
 			if(sprite instanceof SmallCoins) {
 				if(CollisionDetection.overlaps(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY(), sprite.getMinX(),sprite.getMinY(), sprite.getMaxX(), sprite.getMaxY())){
 					sprite.setDispose(true);
-					ShellAnimation.addScore(100);
+					ShellAnimation.addScore(10);
 					break;
 				}
 			}
