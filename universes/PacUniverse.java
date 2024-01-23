@@ -31,7 +31,7 @@ public class PacUniverse implements Universe {
 		this.setXCenter(0);
 		this.setYCenter(0);
 
-		player1 = new PlayerSprite(1575,1575);  //400, 650  //16000
+		player1 = new PlayerSprite(1575,1900);  //400, 650  //16000
 
 		sprites.add(player1);
 		
@@ -54,7 +54,7 @@ public class PacUniverse implements Universe {
 //		sprites.add(new Endzone2(12000, 714.5));
 //		sprites.add(new Endzone3(19500, 714.5));
 //		
-		sprites.add(new Endzone4(23750, 714.5));
+		//sprites.add(new Endzone4(23750, 714.5));
 
 		
 		//Coin
@@ -63,13 +63,44 @@ public class PacUniverse implements Universe {
 		sprites.add(new Coin(3025,150));
 		sprites.add(new Coin(3025,2975));
 		
-		sprites.add(new Coin(22787.5, 620));
+		//Smaller Coins
+		sprites.add(new SmallCoins(225,2965));
+		sprites.add(new SmallCoins(325,2965));
+		sprites.add(new SmallCoins(425,2965));
+		sprites.add(new SmallCoins(525,2965));
+		sprites.add(new SmallCoins(625,2965));
+		sprites.add(new SmallCoins(725,2965));
+		sprites.add(new SmallCoins(825,2965));
+		sprites.add(new SmallCoins(925,2965));
+		sprites.add(new SmallCoins(1025,2965));
+		sprites.add(new SmallCoins(1125,2965));
+		sprites.add(new SmallCoins(1225,2965));
+		sprites.add(new SmallCoins(1325,2965));
+		sprites.add(new SmallCoins(1425,2965));
+		sprites.add(new SmallCoins(1525,2965));
+		sprites.add(new SmallCoins(1625,2965));
+		sprites.add(new SmallCoins(1725,2965));
+		sprites.add(new SmallCoins(1825,2965));
+		sprites.add(new SmallCoins(1925,2965));
+		sprites.add(new SmallCoins(2025,2965));
+		sprites.add(new SmallCoins(2125,2965));
+		sprites.add(new SmallCoins(2225,2965));
+		sprites.add(new SmallCoins(2325,2965));
+		sprites.add(new SmallCoins(2425,2965));
+		sprites.add(new SmallCoins(2525,2965));
+		sprites.add(new SmallCoins(2625,2965));
+		sprites.add(new SmallCoins(2725,2965));
+		sprites.add(new SmallCoins(2825,2965));
+		sprites.add(new SmallCoins(2925,2965));
+
 		
-		//Hit boxes
-		sprites.add(new HitBox(13075, 435));
 		
+//		
+//		//Hit boxes
+//		sprites.add(new HitBox(13075, 435));
+//		
 		//Ghost Sprite
-		sprites.add(new GhostSprite(400, 2001));
+		sprites.add(new GhostSprite(1575, 1675));
 
 
 		

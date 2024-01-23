@@ -43,7 +43,7 @@ public class WinFrame extends JDialog {
 		JLabel lblPickup = new JLabel(String.format("Level Completed"));
 		lblPickup.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPickup.setForeground(new Color(0x39fe39));
-		lblPickup.setFont(new Font("Stencil", Font.PLAIN, 42));
+		lblPickup.setFont(new Font("Stencil", Font.BOLD, 42));
 		lblPickup.setBounds(0, 87, 369, 61);
 		contentPane.add(lblPickup);
 

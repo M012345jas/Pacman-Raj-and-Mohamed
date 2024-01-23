@@ -148,6 +148,7 @@ public class PlayerSprite implements DisplayableSprite {
 //		boolean onGround = isOnGround(universe);
 		//checkCollisionWithCheckpoint(universe.getSprites());
 		checkCollisionWithCoin(universe.getSprites());
+		checkCollisionWithSmallCoin(universe.getSprites());
 		checkCollisionWithPortal(universe.getSprites());
 		checkCollisionWithPortalSideWays(universe.getSprites());
 		//design is to only allow change of x velocity while on ground
@@ -365,6 +366,19 @@ public class PlayerSprite implements DisplayableSprite {
 			}
 		}
 
+	}
+	
+	public void checkCollisionWithSmallCoin(ArrayList<DisplayableSprite> sprites) {
+		
+		for (DisplayableSprite sprite : sprites) {
+			if(sprite instanceof SmallCoins) {
+				if(CollisionDetection.overlaps(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY(), sprite.getMinX(),sprite.getMinY(), sprite.getMaxX(), sprite.getMaxY())){
+					sprite.setDispose(true);
+					ShellAnimation.addScore(100);
+					break;
+				}
+			}
+		}
 	}
 	
 //	private void checkCollisionWithCheckpoint(ArrayList<DisplayableSprite> sprites) {

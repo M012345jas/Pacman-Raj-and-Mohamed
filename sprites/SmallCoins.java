@@ -4,25 +4,21 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Endzone implements DisplayableSprite {
+public class SmallCoins implements DisplayableSprite {
 
 	private static Image image;
 	private boolean visible = true;
 	private double centerX = 0;
 	private double centerY = 0;
-	private double width = 50;
-	private double height = 70;
+	private double width = 25;
+	private double height = 25;
 	private boolean dispose = false;
-	private boolean collisionWithPlayer = false;
-	
-	private CollisionDetection collisionDetection;
-	private VirtualSprite virtual = new VirtualSprite();
 		
-	public Endzone(double centerX, double centerY) {
+	public SmallCoins(double centerX, double centerY) {
 		
 		if (image == null && visible) {
 			try {
-				image = ImageIO.read(new File("res/Sprites/checkpoint.png"));
+				image = ImageIO.read(new File("res/pacmanSprites/smallCoin.jpg"));
 				System.out.println(this.getClass().toString());
 			}
 			catch (IOException e) {
@@ -32,10 +28,10 @@ public class Endzone implements DisplayableSprite {
 		
 		this.centerX = centerX;
 		this.centerY = centerY;
-		collisionDetection = new CollisionDetection();
+		
 	}
 	
-	
+
 	public Image getImage() {
 		return image;
 	}
@@ -92,33 +88,13 @@ public class Endzone implements DisplayableSprite {
 	}
 
 	public void update(Universe universe, KeyboardInput keyboard, long actual_delta_time) {
-		//checkDeath(universe);
-		
+			
 	}
-	
-//	private void checkDeath(Universe universe) {
-//		// TODO Auto-generated method stub
-//		for (DisplayableSprite sprite : universe.getSprites()) {
-//			if (sprite instanceof playerSprite) {
-//				// This does not work; after several attempts ha get it attempts we finally made the spike sprite kill the player
-//				if (CollisionDetection.overlaps(this.getMinX(), this.getMinY(), this.getMaxX(), this.getMaxY(), sprite.getMinX(),sprite.getMinY(), sprite.getMaxX(), sprite.getMaxY())){
-//					if (sprite instanceof playerSprite) {
-//						this.dispose = true;
-//					}
-//				}
-//			}
-//		}
-//	}
 
 
-	// This is very important
-	public boolean getCollisionWithPlayer(){
-		return collisionWithPlayer;
+	@Override
+	public void setXCenter(double Xcenter) {
+		this.centerX = Xcenter;
 	}
-	
-	public void setXCenter(double xCenter) {
-		// TODO Auto-generated method stub
-		this.centerX = xCenter;
-	}
-	
+
 }
