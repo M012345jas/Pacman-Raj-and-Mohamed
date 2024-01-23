@@ -196,10 +196,7 @@ public class PacUniverse implements Universe {
 		sprites.add(new SmallCoins(2150,265));
 		sprites.add(new SmallCoins(2150,190));
 		
-		sprites.add(new SmallCoins(2200,410));
-		sprites.add(new SmallCoins(2250,410));
-		sprites.add(new SmallCoins(2300,410));
-		sprites.add(new SmallCoins(2350,410));
+		sprites.add(new SmallCoins(2280,410));
 		sprites.add(new SmallCoins(2400,210));
 		sprites.add(new SmallCoins(2400,310));
 		sprites.add(new SmallCoins(2400,410));
@@ -267,6 +264,56 @@ public class PacUniverse implements Universe {
 		sprites.add(new SmallCoins(450,760));
 		sprites.add(new SmallCoins(450,660));
 		sprites.add(new SmallCoins(350,960));
+		
+		sprites.add(new SmallCoins(350,1060));
+		sprites.add(new SmallCoins(350,1160));
+		sprites.add(new SmallCoins(450,1160));
+		sprites.add(new SmallCoins(550,1160));
+		sprites.add(new SmallCoins(650,1160));
+		sprites.add(new SmallCoins(550,1260));
+		sprites.add(new SmallCoins(550,1360));
+		sprites.add(new SmallCoins(550,1460));
+		sprites.add(new SmallCoins(450,1460));
+		sprites.add(new SmallCoins(350,1460));
+		sprites.add(new SmallCoins(350,1580));
+		sprites.add(new SmallCoins(450,1580));
+		sprites.add(new SmallCoins(450,1680));
+		sprites.add(new SmallCoins(550,1580));
+		sprites.add(new SmallCoins(550,1680));
+		sprites.add(new SmallCoins(740,1160));
+		sprites.add(new SmallCoins(740,1260));
+		sprites.add(new SmallCoins(740,1360));
+		sprites.add(new SmallCoins(740,1460));
+		sprites.add(new SmallCoins(740,1560));
+		sprites.add(new SmallCoins(740,1660));
+		sprites.add(new SmallCoins(740,1760));
+		sprites.add(new SmallCoins(740,1860));
+		sprites.add(new SmallCoins(640,1860));
+		sprites.add(new SmallCoins(540,1860));
+		sprites.add(new SmallCoins(440,1860));
+		sprites.add(new SmallCoins(340,1860));
+		sprites.add(new SmallCoins(340,1960));
+		sprites.add(new SmallCoins(340,2060));
+		sprites.add(new SmallCoins(340,2160));
+		sprites.add(new SmallCoins(740,1980));
+		sprites.add(new SmallCoins(640,1980));
+		sprites.add(new SmallCoins(540,1980));
+		sprites.add(new SmallCoins(540,2080));
+		sprites.add(new SmallCoins(540,2160));
+		sprites.add(new SmallCoins(440,2160));
+		
+		sprites.add(new SmallCoins(440,2260));
+		sprites.add(new SmallCoins(440,2360));
+		sprites.add(new SmallCoins(440,2460));
+		sprites.add(new SmallCoins(440,2560));
+		sprites.add(new SmallCoins(340,2560));
+		sprites.add(new SmallCoins(240,2560));
+		sprites.add(new SmallCoins(300,2660));
+		sprites.add(new SmallCoins(300,2760));
+		sprites.add(new SmallCoins(400,2760));
+		sprites.add(new SmallCoins(500,2760));
+		sprites.add(new SmallCoins(600,2760));
+		sprites.add(new SmallCoins(580,2860));
 		
 		
 		
